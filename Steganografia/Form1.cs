@@ -31,6 +31,17 @@ namespace Steganografia
         };
         private void button2_Click(object sender, EventArgs e)
         {
+            Bitmap bmp = new Bitmap(pictureBox1.ImageLocation);
+            pictureBox1.Image = bmp;
+            string message = "finally lol";
+            bmp = embedText(message, bmp);
+
+            SaveFileDialog svd = new SaveFileDialog();
+            if (svd.ShowDialog() == DialogResult.OK)
+            {
+                bmp.Save(svd.FileName);
+                pictureBox2.ImageLocation = svd.FileName;
+            }
 
         }
 
