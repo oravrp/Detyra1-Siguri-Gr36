@@ -47,6 +47,14 @@ namespace Steganografia
 
         private void button3_Click(object sender, EventArgs e)
         {
+            OpenFileDialog opf = new OpenFileDialog();
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                string path = opf.FileName;
+                Bitmap bmp = new Bitmap(path);
+                string mess = extractText(bmp);
+                MessageBox.Show(mess);
+            }
 
         }
     }
