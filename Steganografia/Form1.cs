@@ -62,6 +62,104 @@ namespace Steganografia
             filled
         };
 
+        //Funksioni per fshehjen e informates ne fotografi
+        public static Bitmap stegano(string text, Bitmap bmp)
+        {
+            //Fshehja e characters ne fotografi
+            Situation state = Situation.encrypting;
+
+            int char_index = 0, char_val = 0, zeros = 0;
+            long rgb_index = 0;
+
+            int R = 0;
+            int G = 0;
+            int B = 0;
+
+
+            for (int i = 0; i < bmp.Height; i++)
+            {
+                //kalimi ne cdo rresht
+                for (int j = 0; j < bmp.Width; j++)
+                {
+                    //ruajtja e pixelit qe eshte duke u procesuar
+                    Color pixel = bmp.GetPixel(j, i);
+
+                    //Largimi i bitit least significant nga te tri ngjyrat e pixelit
+                    R = pixel.R - pixel.R % 2;
+                    G = pixel.G - pixel.G % 2;
+                    B = pixel.B - pixel.B % 2;
+
+                    //per cdo pixel,kalimi ne cdo element (RGB)
+                    for (int n = 0; n < 3; n++)
+                    {
+
+                        if (rgb_index % 8 == 0)
+                        {
+
+                            if (state == Situation.filled && zeros == 8)
+                            {
+
+                                if (rgb_index % 3 <= 2)
+                                {
+                                    bmp.SetPixel(j, i, Color.FromArgb(R, G, B));
+                                }
+
+                                return bmp;
+                            }
+
+                            if (char_index >= text.Length)
+                            {
+                                state = Situation.filled;
+                            }
+                            else
+                            {
+                                char_val = text[char_index++];
+                            }
+                        }
+
+                        if (rgb_index % 3 == 0)
+                        {
+                            if (state == Situation.encrypting)
+                            {
+
+                                R += char_val % 2;
+                                char_val /= 2;
+                            }
+                        }
+                        else if (rgb_index % 3 == 1)
+                        {
+                            if (state == Situation.encrypting)
+                            {
+                                G += char_val % 2;
+
+                                char_val /= 2;
+                            }
+                        }
+                        else if (rgb_index % 3 == 2)
+                        {
+                            if (state == Situation.encrypting)
+                            {
+                                B += char_val % 2;
+
+                                char_val /= 2;
+                            }
+
+                            bmp.SetPixel(j, i, Color.FromArgb(R, G, B));
+
+                        }
+
+                        rgb_index++;
+
+                        if (state == Situation.filled)
+                        {
+                            zeros++;
+                        }
+                    }
+                }
+            }
+            return bmp;
+        }
+
         //Butoni 3: Read Text
         private void button3_Click(object sender, EventArgs e)
         {
