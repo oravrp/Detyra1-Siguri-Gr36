@@ -43,8 +43,8 @@ namespace Steganografia
         {
             Bitmap bmp = new Bitmap(pictureBox1.ImageLocation);
             pictureBox1.Image = bmp;
-            string message = "finally lol";
-            bmp = embedText(message, bmp);
+            string message = "FIEK-projekti SI";
+            bmp = stegano(message, bmp);
 
             SaveFileDialog svd = new SaveFileDialog();
             if (svd.ShowDialog() == DialogResult.OK)
@@ -158,6 +158,56 @@ namespace Steganografia
                 }
             }
             return bmp;
+        }
+
+        //Funksioni per leximin e tekstit te fshehur
+        public static string get_text(Bitmap bmp)
+        {
+            int col_index = 0, char_val = 0;
+ 
+            string teksti = String.Empty;
+ 
+            for (int i = 0; i < bmp.Height; i++)
+            {
+ 
+                for (int j = 0; j < bmp.Width; j++)
+                {
+                    Color pixel = bmp.GetPixel(j, i);
+ 
+                    for (int n = 0; n < 3; n++)
+                    {
+ 
+                        if (col_index % 3 == 0)
+                        {
+                            char_val = char_val * 2 + pixel.R % 2;
+                        }
+                        else if (col_index % 3 == 1)
+                        {
+                            char_val = char_val * 2 + pixel.G % 2;
+                        }
+                        else if (col_index % 3 == 2)
+                        {
+                            char_val = char_val * 2 + pixel.B % 2;
+                        }
+ 
+                        col_index++;
+ 
+                        if (col_index % 8 == 0)
+                        {
+                            char_val = bit_reverse(char_val);
+ 
+                            if (char_val == 0)
+                            {
+                                return teksti;
+                            }
+                            char c = (char)char_val;
+                            teksti += c.ToString();
+                        }
+                    }
+                }
+            }
+ 
+            return teksti;
         }
 
         //Butoni 3: Read Text

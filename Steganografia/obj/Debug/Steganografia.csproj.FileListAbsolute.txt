@@ -1,0 +1,10 @@
+C:\Users\ora-2\OneDrive\Desktop\Detyra1-Siguri-Gr36\Steganografia\bin\Debug\Steganografia.exe.config
+C:\Users\ora-2\OneDrive\Desktop\Detyra1-Siguri-Gr36\Steganografia\bin\Debug\Steganografia.exe
+C:\Users\ora-2\OneDrive\Desktop\Detyra1-Siguri-Gr36\Steganografia\bin\Debug\Steganografia.pdb
+C:\Users\ora-2\OneDrive\Desktop\Detyra1-Siguri-Gr36\Steganografia\obj\Debug\Steganografia.csprojAssemblyReference.cache
+C:\Users\ora-2\OneDrive\Desktop\Detyra1-Siguri-Gr36\Steganografia\obj\Debug\Steganografia.Form1.resources
+C:\Users\ora-2\OneDrive\Desktop\Detyra1-Siguri-Gr36\Steganografia\obj\Debug\Steganografia.Properties.Resources.resources
+C:\Users\ora-2\OneDrive\Desktop\Detyra1-Siguri-Gr36\Steganografia\obj\Debug\Steganografia.csproj.GenerateResource.cache
+C:\Users\ora-2\OneDrive\Desktop\Detyra1-Siguri-Gr36\Steganografia\obj\Debug\Steganografia.csproj.CoreCompileInputs.cache
+C:\Users\ora-2\OneDrive\Desktop\Detyra1-Siguri-Gr36\Steganografia\obj\Debug\Steganografia.exe
+C:\Users\ora-2\OneDrive\Desktop\Detyra1-Siguri-Gr36\Steganografia\obj\Debug\Steganografia.pdb
