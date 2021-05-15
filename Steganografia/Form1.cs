@@ -16,6 +16,7 @@ namespace Steganografia
         {
             InitializeComponent();
         }
+        //Hapja e fotografise 
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -24,11 +25,20 @@ namespace Steganografia
                 pictureBox1.ImageLocation = openFileDialog.FileName;
             }
         }
-        public enum State
+
+        public static int bit_reverse(int n)
         {
-            Hiding,
-            Filling_With_Zeros
-        };
+            int rezultati = 0;
+
+            for (int i = 0; i < 8; i++)
+            {
+                rezultati = rezultati * 2 + n % 2;
+
+                n /= 2;
+            }
+
+            return rezultati;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             Bitmap bmp = new Bitmap(pictureBox1.ImageLocation);
@@ -45,6 +55,14 @@ namespace Steganografia
 
         }
 
+        //Enum per ruajtjen e gjendjeve
+        public enum Situation
+        {
+            encrypting,
+            filled
+        };
+
+        //Butoni 3: Read Text
         private void button3_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -52,10 +70,9 @@ namespace Steganografia
             {
                 string path = opf.FileName;
                 Bitmap bmp = new Bitmap(path);
-                string mess = extractText(bmp);
+                string mess = get_text(bmp);
                 MessageBox.Show(mess);
             }
-
         }
     }
 }
