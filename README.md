@@ -1,37 +1,44 @@
-# Assignment I : Data Security
+# Projekti I : Siguria e të dhënave
 
-##### Nr27 assignment: Image Steganography, changing 3 bits per pixel.
+##### Detyra 27: Steganografia, fshehja e informatës në fotografi duke ndryshuar 3 bits brenda një pixel.
 
 
-## Introduction
-Steganography is the art and science of hiding information by embedding messages within others. Steganography works by replacing bits of useless or unused data in regular computer files with bits of different, invisible information. This hidden information can be plain text, cipher text, or even images.
+## Hyrje
+Steganografia është arti dhe shkenca mbi fshehjen e informatës përmes fshehjes së mesazhit brenda një mesazhi tjetër. Steganografia funksionon në atë mënyrë që bitat më pak të rëndësishëm të të dhënave të ruajtura në files, zëvendësohen me bita të tjerë të informatës tonë. Informata e fshehur mund të jetë teskt, fotografi, tekst i shifruar. 
 
-In our case, our data will be the plain text that we need to hide, and the unused data is the least significant bits (LSBs) in the image pixels.
+Në rastin tonë, informata që do të fshehet është tekst dhe fshehja do të bëhet në bitat më pak signifikant brenda pixelave të fotografisë.
+
 
 ---
 
-## Brief Explanation
-1. Hiding the text inside the image
+## Sqarimi
+1. Kuptimi i konceptit të detyrës - fshehja e informatës në fotografi duke ndryshuar 3 bits brenda një pixeli të fotografisë
     
-    * Loop through the pixels of the image. In each iteration, get the RGB values separated each in a separate integer.
-    * For each of R, G, and B, make the LSB equals to 0. These bits will be used in hiding characters..
+    * Një pixel i fotografisë përbëhet nga 3 bytes, përkatësisht elementet RGB (secili nga 1 byte), kurse 1 byte përbëhet nga 8 bits.
+    * Ndryshimi i 3 bitave brenda një pixeli nënkupton që për secilin byte brenda 1 pixeli duhet të ndryshohet 1 bit. 
 
-2. Extracting the text from the image
+2. Fshehja e tekstit brenda fotografisë
 
-    * Pass through the pixels of the image until you find 8 consecutive zeros.
-    * Pick the LSB from each pixel element (R, G, B) and attach it into an empty value. When the 8 bits of this value are done, convert it back to character, then add that character to the result text you are seeking.
+    * Iterimi në çdo pixel të fotografisë dhe ndarja e vlerave RGB si integer.
+    * Për çdo RGB, biti më pak signifikant bëhet 0. Këta bita do të përdoren për fshehje të shkronjave të tekstit.
+
+3. Nxjerrja e tekstit nga fotografia
+
+    * Kontrollohet secili pixel derisa të hasim 8 zero të njëpasnjëshme. 
+    * Merret biti më pak signifikant i secilit element të pixelit (R, G, B), shndërrohen në shkronjë dhe shkronjat bashkangjiten në tekst.  
+
 
 
 ---
 
-## Contributors
-This assignment is done by three Computer Engineering students at University of Prishtina.
+## Kontribuesit
+Detyra është realizuar nga tre studentë të drejtimit Inxhinieri Kompjuterike në Fakultetin e Inxhinierisë Elektrike dhe Kompjuterike - Universiteti i Prishtinës.
 
 * Ora Vrapcani [@oravrp](https://github.com/oravrp)
 * Lum Dukaj [@lumdukaj](https://github.com/lumdukaj)
 * Loreta Pajaziti [@LoretaPajaziti](https://github.com/LoretaPajaziti)
 
-## Used Resources
+## Resurset e shfrytëzuara 
 
    * [Steganography](https://www.ijcaonline.org/volume9/number7/pxc3871887.pdf),
 
