@@ -7,23 +7,36 @@ namespace SteganografiaCon
     {
         static void Main(string[] args)
         {
+            
+            while(true)
+            {
+                Console.Write("\nEnter image path: ");
+                string sourcePath = Console.ReadLine();
+                try{
+                    var temp=Image.FromFile(sourcePath);
+                    var bmp=new Bitmap(temp);
 
-            Console.Write("Enter image path: ");
-            string sourcePath = Console.ReadLine();
+                    Console.Write("Enter message you want to hide: ");
+                    string message = Console.ReadLine();
 
-            var temp=Image.FromFile(sourcePath);
-            var bmp=new Bitmap(temp);
+                Console.Write("Enter path you want to save the image: ");
+                string targetPath = Console.ReadLine();
 
-            Console.Write("Enter message you want to hide: ");
-            string message = Console.ReadLine();
+                bmp=stegano(message,bmp);
+                bmp.Save(targetPath, System.Drawing.Imaging.ImageFormat.Bmp);
+                var temp2=Image.FromFile(targetPath);
+                var bmp1=new Bitmap(temp2);
+                string mess = get_text(bmp1);
+                Console.WriteLine("The hidden text is: "+ mess);
+                break;
+                }
 
-            Console.Write("Enter path you want to save the image: ");
-            string targetPath = Console.ReadLine();
-
-            bmp=stegano(message,bmp);
-            bmp.Save(targetPath, System.Drawing.Imaging.ImageFormat.Bmp);
-            string mess = get_text(bmp);
-            Console.WriteLine("The hidden text is: "+ mess);
+                catch(Exception)
+                {
+                    Console.Write("There was an error opening the bitmap." +
+                    "Please check the path.");
+                }
+            }
         }
         public static int bit_reverse(int n)
         {
