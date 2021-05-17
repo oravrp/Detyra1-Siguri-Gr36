@@ -22,13 +22,15 @@ namespace SteganografiaCon
                 Console.Write("Enter path you want to save the image: ");
                 string targetPath = Console.ReadLine();
 
-                bmp=stegano(message,bmp);
-                bmp.Save(targetPath, System.Drawing.Imaging.ImageFormat.Bmp);
-                var temp2=Image.FromFile(targetPath);
-                var bmp1=new Bitmap(temp2);
-                string mess = get_text(bmp1);
-                Console.WriteLine("The hidden text is: "+ mess);
-                break;
+                    bmp=stegano(message,bmp);
+                    bmp.Save(targetPath, System.Drawing.Imaging.ImageFormat.Bmp);
+                    Console.Write("Enter image path you want to read the text: ");
+                    string stagPath = Console.ReadLine();
+                    var temp2=Image.FromFile(stagPath);
+                    var bmp1=new Bitmap(temp2);
+                    string mess = get_text(bmp1);
+                    Console.WriteLine("The hidden text is: "+ mess);
+                    break;
                 }
 
                 catch(Exception)
