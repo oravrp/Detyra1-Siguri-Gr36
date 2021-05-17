@@ -19,10 +19,16 @@ namespace Steganografia
         //Hapja e fotografise 
         private void button1_Click(object sender, EventArgs e)
         {
+            var suportedExt = new List<string> {"png","jpg","bmp","jpeg"};
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK && suportedExt.Contains(openFileDialog.FileName.Split('.').LastOrDefault()))
             {
                 pictureBox1.ImageLocation = openFileDialog.FileName;
+            }
+            else
+            {
+                string mess = "Format not valid!";
+                MessageBox.Show(mess);
             }
         }
 
