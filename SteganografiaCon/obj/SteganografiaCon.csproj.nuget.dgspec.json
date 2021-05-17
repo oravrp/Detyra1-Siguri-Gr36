@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\SteganografiaCon.csproj": {}
+    "c:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\SteganografiaCon.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\SteganografiaCon.csproj": {
+    "c:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\SteganografiaCon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\SteganografiaCon.csproj",
+        "projectUniqueName": "c:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\SteganografiaCon.csproj",
         "projectName": "SteganografiaCon",
-        "projectPath": "C:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\SteganografiaCon.csproj",
+        "projectPath": "c:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\SteganografiaCon.csproj",
         "packagesPath": "C:\\Users\\ora-2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\obj\\",
+        "outputPath": "c:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ora-2\\AppData\\Roaming\\NuGet\\NuGet.Config",

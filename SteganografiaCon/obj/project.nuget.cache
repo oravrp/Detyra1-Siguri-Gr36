@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+QuB7ZIFHpB/P6hvIHZ3Q4m/MX4P/YNzdb0LU1fPXzocjTd03qR4QXE6PlAvTu0bIbT0Oql7PyqcwLEhPRwaPA==",
+  "dgSpecHash": "so3VrXVK9R6ihDUcu+9K+llC7hoYCB5VrdxWzpkG8FeeT/YE8xRrcvVA8mHyD2PxpFtqC8hqBwPJjlMqmgTOVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\SteganografiaCon.csproj",
+  "projectFilePath": "c:\\Users\\ora-2\\OneDrive\\Desktop\\Detyra1-Siguri-Gr36\\SteganografiaCon\\SteganografiaCon.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ora-2\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\ora-2\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",

@@ -19,17 +19,17 @@ namespace SteganografiaCon
                     Console.Write("Enter message you want to hide: ");
                     string message = Console.ReadLine();
 
-                Console.Write("Enter path you want to save the image: ");
-                string targetPath = Console.ReadLine();
+                    Console.Write("Enter path you want to save the image: ");
+                    string targetPath = Console.ReadLine();
 
                     bmp=stegano(message,bmp);
                     bmp.Save(targetPath, System.Drawing.Imaging.ImageFormat.Bmp);
-                    Console.Write("Enter image path you want to read the text: ");
-                    string stagPath = Console.ReadLine();
-                    var temp2=Image.FromFile(stagPath);
-                    var bmp1=new Bitmap(temp2);
-                    string mess = get_text(bmp1);
-                    Console.WriteLine("The hidden text is: "+ mess);
+                    
+                    Console.Write("Do you want to read the hidden text in an image?? \nPress Y for yes,other for no.\n");
+                    string option = Console.ReadLine();
+                    if(option=="Y" || option=="y"){
+                        ReadText();
+                    }
                     break;
                 }
 
@@ -39,6 +39,14 @@ namespace SteganografiaCon
                     "Please check the path.");
                 }
             }
+        }
+        public static void ReadText(){
+            Console.Write("Enter image path you want to read the text: ");
+            string stagPath = Console.ReadLine();
+            var temp2=Image.FromFile(stagPath);
+            var bmp1=new Bitmap(temp2);
+            string mess = get_text(bmp1);
+            Console.WriteLine("The hidden text is: "+ mess);
         }
         public static int bit_reverse(int n)
         {
