@@ -223,15 +223,16 @@ namespace Steganografia
             OpenFileDialog opf = new OpenFileDialog();
             if (opf.ShowDialog() == DialogResult.OK && extension.Contains(opf.FileName.Split('.').LastOrDefault()))
             {
-                string mess = "Format not valid!";
-                MessageBox.Show(mess);
-            }
-            else if (opf.ShowDialog() == DialogResult.OK)
-            {
                 string path = opf.FileName;
                 Bitmap bmp = new Bitmap(path);
                 string mess = get_text(bmp);
                 MessageBox.Show(mess);
+            }
+            else 
+            {
+                string mess = "Format not valid!";
+                MessageBox.Show(mess);
+                
             }
           
         }
